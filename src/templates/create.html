@@ -1,0 +1,7 @@
+{% block content %}
+<form method="post">{% csrf_token %}
+   {{ form.as_p }} #as_pでpタグで囲って表示できる。
+   <input type="submit" value="投稿">
+</form>
+
+{% endblock content %}

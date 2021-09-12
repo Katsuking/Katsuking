@@ -1,0 +1,18 @@
+
+{% extends 'files/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block scripts %} ファイル管理{% endblock scripts %}
+
+{% block title %} ファイル管理アプリ {% endblock title %}
+
+
+{% block content %}
+        <a href="{% url 'files:index' %}">アップロード画面に戻る</a>
+        <br>
+
+        <form enctype="multipart/form-data" action="{% url 'files:new_file' %}" method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit">保存</button>
+{% endblock content %}

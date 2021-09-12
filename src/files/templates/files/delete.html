@@ -1,0 +1,21 @@
+
+{% extends 'files/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block scripts %} ファイル管理{% endblock scripts %}
+
+{% block title %} ファイル管理アプリ {% endblock title %}
+
+
+{% block content %}
+        {% include 'files/nav.html'%}
+            <a href="{% url 'files:index' %}">アップロード画面に戻る</a>
+            <br>
+    <form method="POST">
+    {% csrf_token %}
+            {{form|crispy}}
+        <input class="btn btn-success btn-block" type="submit" value="Add">
+    </form>
+           
+{% endblock content %}
+

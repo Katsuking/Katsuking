@@ -1,0 +1,20 @@
+
+{% extends 'files/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block scripts %} ファイル管理{% endblock scripts %}
+
+{% block title %} ファイル管理アプリ {% endblock title %}
+
+
+{% block content %}
+        <a href="{% url 'files:new_file' %}">ファイルのアップロード</a>
+        <br>
+
+        <h2>ダウンロードファイル一覧</h2>
+        <br>
+
+        {% for file in file_obj %}
+            <p><a href="{{ file.upload.url }}">{{ file.file_name }}</a> {{file.upload.size}} </p>
+        {% endfor %}
+{% endblock content %}
