@@ -30,6 +30,7 @@ Pillow = "==8.3.1"
 PyPDF2 = "==1.26.0"
 django-cleanup = "*"
 django-allauth = "*"
+python-dotenv = "*"
 
 [dev-packages]
 autopep8 = "*"
